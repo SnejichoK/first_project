@@ -1,0 +1,123 @@
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+
+  /* Добавил чтобы можно было скролить вниз */
+  height: 1000px;
+}
+
+#some_block {
+  background: red;
+  color:  #fff;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+
+  /* Помещает этот кружок внутрь шапки (Изначально этот кружок появляется над ним) */
+  /* position: absolute; */
+
+  /* при скроле кружок перемещается с нами */
+  position: fixed;
+  left: 20px;
+  top: 50px;
+}
+
+#header, #footer {
+  width: 100%;
+  height: 70px;
+  text-align: center;
+  border-bottom: 4px solid silver;
+  background: #333;
+  color: #fff;
+
+  /* Растояние между строками */
+  line-height: 70px;
+  margin-bottom: 50px;
+  float: left;
+}
+
+#main {
+  width: 50%;
+  margin-left: 10%;
+  background: #fafafa;
+  border: 1px solid silver;
+  padding: 20px 2.5%;
+  float: left;
+
+  /* Говорит какой обьект главнее (Этот обьект главнее aside, я там написал z-index: 0) */
+  /* position добавил чтобы работал z-index */
+  position: relative;
+  z-index: 1;
+}
+
+#nav {
+  list-style: none;
+  display: block;
+  float: left;
+  width: 50%;
+  margin-left: 25%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#nav li {
+  /* Делаем чтобы каждый элементы был строчным */
+  display: inline;
+  background: #fafafa;
+  border: 1px solid silver;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+#nav li:hover{
+  color: #fafafa;
+  background: #333;
+  border-radius: 5px;
+  border-color: #333;
+}
+
+li a {
+  color: #333;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: #fafafa;
+  background: #333;
+  border-radius: 5px;
+  border-color: #333;
+}
+
+/* Добавили отступы справа везде кроме последнего элемента */
+#nav li:not(:last-of-type) {
+  margin-right: 20px;
+}
+
+#aside {
+  width: 20%;
+  padding: 20px 2.5%;
+  background: #fafafa;
+  border: 1px solid silver;
+  float: left;
+  margin-left: 5%;
+
+  /* Позицианирует обьект */
+  position: relative;
+  /* Дополняет команду position и опускает блок на 10px вверх */
+  bottom: -10px;
+  z-index: 0;
+  left: -200px;
+}
+
+#footer {
+  margin-bottom: 0;
+  margin-top: 50px;
+  border-bottom: 0;
+  border-top: 4px solid silver;
+}
